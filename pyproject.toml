@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "plexar-framework"
 version = "0.1.0"
 description = "A local control plane for agent runs: held prompts, approved batches, gate-decided verdicts."
+license = {text = "MIT"}
 requires-python = ">=3.11"
 dependencies = ["fastapi", "uvicorn", "httpx"]
 
