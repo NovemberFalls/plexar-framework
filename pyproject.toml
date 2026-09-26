@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plexar-framework"
+version = "0.1.0"
+description = "A local control plane for agent runs: held prompts, approved batches, gate-decided verdicts."
+requires-python = ">=3.11"
+dependencies = ["fastapi", "uvicorn", "httpx"]
+
+[project.scripts]
+plexar = "plexar_agents.cli:main"
+
+[tool.setuptools]
+packages = ["plexar_agents"]
+
+[tool.setuptools.package-data]
+plexar_agents = ["*.json"]

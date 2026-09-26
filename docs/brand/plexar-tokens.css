@@ -1,0 +1,50 @@
+/* Plexar shared design tokens.
+ * Source of truth: Len's Claude Design export (Plexar LLM.dc.html, Plexar Platform.dc.html).
+ * Do not edit values here without re-deriving from that export. See README.md. */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/montserrat-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  /* surfaces (elevation ladder, darkest to lightest) */
+  --px-bg: #0a0a0b;
+  --px-bg-2: #0f0f11;
+  --px-surface: #1a1a1d;
+  --px-elev: #26262a;
+  --px-elev-2: #2a2a2e;
+
+  /* borders */
+  --px-border: #3a3a3f;
+  --px-border-strong: #3b3c41;
+
+  /* text */
+  --px-fg: #f2f2f3;
+  --px-fg-2: #e9eaec;
+  --px-text: #c9ccd1;
+  --px-muted: #a4a8b0;
+  --px-dim: #8a8e97;
+  --px-faint: #5a5c62;
+
+  /* accent + status */
+  --px-accent: #f28a2e;
+  --px-accent-soft: #f2c8a4;
+  --px-ok: #9ad0b4;
+  --px-warn: #f2b27a;
+  --px-error: #e2574c;
+
+  /* type */
+  --px-font-display: 'Montserrat', sans-serif;
+  --px-font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --px-font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  /* radius */
+  --px-radius-sm: 5px;
+  --px-radius: 10px;
+  --px-radius-md: 12px;
+  --px-radius-lg: 16px;
+  --px-radius-xl: 18px;
+}

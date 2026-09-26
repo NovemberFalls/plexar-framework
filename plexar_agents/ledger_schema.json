@@ -1,0 +1,155 @@
+{
+  "$comment": "The pinned row schema for the framework's logs (event -> required keys, plus enums). Every writer of rows, and any tool ingesting rows through POST /api/logs, validates against THIS file via plexar_agents.ledger.validate(). `required` = the key must be present (null is allowed where null is meaningful: node_check_exit null means 'did not run', never 0). Rows may carry extra keys; readers ignore unknown keys. Bump `version` on any change.",
+  "version": "ledger-schema-2 (2026-09-23)",
+  "common": [
+    "ts",
+    "event",
+    "run_id",
+    "node_id"
+  ],
+  "events": {
+    "run_start": [
+      "skill",
+      "skill_version",
+      "cwd",
+      "task_summary"
+    ],
+    "plan": [
+      "path",
+      "scale_gate_reason",
+      "node_count",
+      "lanes_planned",
+      "efforts_planned",
+      "edges",
+      "max_depth",
+      "interfaces_declared",
+      "interfaces_consumed",
+      "interfaces_absent_at_dispatch",
+      "diffable_sites",
+      "generative_sites",
+      "apply_tier_nodes",
+      "gate_script_sha256",
+      "preamble_sha256"
+    ],
+    "dispatch": [
+      "worker",
+      "phase",
+      "lane",
+      "effort",
+      "lane_reason",
+      "brief_path",
+      "brief_sha256",
+      "brief_author_model",
+      "files_owned",
+      "spec_sections",
+      "diffable",
+      "retry_mode",
+      "pred"
+    ],
+    "outcome": [
+      "status",
+      "blocked_question",
+      "blocked_cause",
+      "brief_defect",
+      "attempts",
+      "escalated_to",
+      "files_touched",
+      "scope_violation",
+      "node_check_cmd",
+      "node_check_exit",
+      "wall_ms"
+    ],
+    "run": [
+      "status",
+      "gate_exit",
+      "gate_failing_check",
+      "gate_evidence",
+      "gate_verified_against_defect",
+      "interfaces_declared_uncalled_at_landing",
+      "orchestrator_repairs",
+      "orchestrator_repair_notes",
+      "wall_ms"
+    ],
+    "review": [
+      "stage",
+      "reviewer_model",
+      "subject_node",
+      "subject_model",
+      "hop",
+      "attempt",
+      "verdict",
+      "judgement",
+      "feedback",
+      "evidence",
+      "wall_ms"
+    ],
+    "task_review": [
+      "verdict",
+      "by",
+      "note",
+      "at",
+      "gate_exit",
+      "state"
+    ],
+    "qa_result": [
+      "case_id",
+      "case_class",
+      "ai_verdict",
+      "human_verdict",
+      "agree",
+      "by"
+    ]
+  },
+  "enums": {
+    "outcome.status": [
+      "DONE",
+      "BLOCKED",
+      "GATE_FAIL",
+      "LADDER_EXHAUSTED"
+    ],
+    "run.status": [
+      "COMPLETED",
+      "HALTED_FOR_DECISION",
+      "ABANDONED"
+    ],
+    "outcome.blocked_cause": [
+      null,
+      "brief",
+      "orchestrator-broken",
+      "orchestrator-misleading",
+      "environment"
+    ],
+    "run.gate_verified_against_defect": [
+      true,
+      false,
+      "not-reproducible-in-harness"
+    ],
+    "review.stage": [
+      "verifier",
+      "approver",
+      "human"
+    ],
+    "review.verdict": [
+      "pass",
+      "fail",
+      "approve",
+      "reject",
+      "error"
+    ],
+    "task_review.verdict": [
+      "merged",
+      "rejected",
+      "rework"
+    ],
+    "qa_result.human_verdict": [
+      "PASS",
+      "FAIL",
+      "BLOCKED"
+    ],
+    "qa_result.case_class": [
+      "AUTO",
+      "VISUAL",
+      "MANUAL"
+    ]
+  }
+}
