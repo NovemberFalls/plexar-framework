@@ -4,7 +4,10 @@
 <title>Plexar Framework</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<!-- Not render-blocking: inside Studio's TASKS webview a cold fetch of this sheet held the whole
+     page blank. The font swaps in when it arrives; the tokens' monospace fallback renders first. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="/brand/plexar-tokens.css">
 <link rel="icon" href="/brand/mark.png">
 <style>

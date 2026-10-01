@@ -18,6 +18,15 @@ Its [`showcase/`](https://github.com/NovemberFalls/plexar-notes/tree/main/showca
 the full record: the goal as typed, every task's check before and after, each reviewer's
 verdict (including the ones they sent back), and the screenshots.
 
+Being built now, each with the same `showcase/` record as it lands:
+
+- [**tomlette**](https://github.com/NovemberFalls/tomlette) — a TOML 1.0 parser in pure
+  Python. The check is the official toml-test suite, which no agent wrote, charted from
+  0 to 100% passing across tasks.
+- [**Mazeman**](https://github.com/NovemberFalls/mazeman) — Pac-Man where every level is
+  a freshly generated maze. Each maze must obey Pac-Man's rules (connected, symmetric, no
+  dead ends, one tunnel, one ghost house), tested over 1,000 seeds.
+
 ## Run it
 
 ```sh
